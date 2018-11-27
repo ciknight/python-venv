@@ -41,7 +41,7 @@ endif
 "if exists('g:deoplete#sources#jedi')
 "  let g:deoplete#sources#jedi#extra_path=$PYTHONPATH
 "endif
-echom 'Set pipenv venv success'
+echo 'Set pipenv venv success'
 endfunction
 
 " {{{
@@ -52,7 +52,7 @@ function! FoundPipEnv()
     let g:python_venv_path = substitute(pipenv_venv_path, '\n', '', '')
     call SetPipEnvVEnv()
   else
-    echom 'No pipenv venv'
+    echo 'No pipenv venv'
   endif
 endfunction
 " }}}
