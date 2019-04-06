@@ -48,7 +48,7 @@ endfunction
 function! FoundPipEnv()
   let pipenv_venv_path = system('pipenv --venv')
   " if error return 1, No virtualenv has been created
-  if shell_error == 0
+  if v:shell_error == 0
     let g:python_venv_path = substitute(pipenv_venv_path, '\n', '', '')
     call SetPipEnvVEnv()
   else
