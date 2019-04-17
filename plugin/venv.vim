@@ -10,8 +10,8 @@ endif
 " --------------------------------
 " Add our plugin to the path
 " --------------------------------
-python3 import vim, sys
-"python3 if vim.eval('expand("<sfile>:p:h")') not in sys.path: sys.path.append(vim.eval('expand("<sfile>:p:h")'))
+python3 import sys
+python3 import vim
 
 " --------------------------------
 "  Function(s)
@@ -41,7 +41,7 @@ endif
 "if exists('g:deoplete#sources#jedi')
 "  let g:deoplete#sources#jedi#extra_path=$PYTHONPATH
 "endif
-echo 'Set pipenv venv success'
+echom 'Set pipenv venv success'
 endfunction
 
 " {{{
@@ -52,7 +52,7 @@ function! FoundPipEnv()
     let g:python_venv_path = substitute(pipenv_venv_path, '\n', '', '')
     call SetPipEnvVEnv()
   else
-    echo 'No pipenv venv'
+    echom 'No pipenv venv'
   endif
 endfunction
 " }}}
